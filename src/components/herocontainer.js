@@ -1,24 +1,24 @@
 import React from 'react'
-// import { useState,useEffect } from 'react'
+import Slidesshow from './slidesshowdemo'
 import Navbar from './navbar'
+import '../App.css'
 
-function herocontainer(){
-
-
-return(
-    <div >
-    <header className='background-img'>
-    <div className="heroSection">
-    <Navbar/>
-    <div className="left-hero">
-    <h1>Grab your deals  
-     </h1>
-    </div>
-    </div>
-    </header>
-    <input></input>
-    </div>
-)
+function Herocontainer() {
+  return (
+    <>
+    {
+      <header className='background-img'>
+      <div className="heroSection">
+      <Navbar />
+      <div className="slideshow-container">
+      <Slidesshow/>
+      </div>
+      </div>
+      </header>
+    }
+    </>
+    
+  )
 
 }
-export default herocontainer
+export default Herocontainer

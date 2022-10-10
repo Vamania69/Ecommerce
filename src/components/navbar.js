@@ -2,12 +2,10 @@ import React, {useState ,useEffect } from 'react'
 import '../App.css'
 const Navbar =()=> {
     const [navbar, setNavbar] = useState(false)
-
     const Sticknavbar = () => {
         if (window.scrollY >= 50) {
             setNavbar(true)
             console.log(window.scrollY)
-    
     } else {
       setNavbar(false)
     }
@@ -16,7 +14,6 @@ const Navbar =()=> {
         Sticknavbar()
         window.addEventListener('scroll', Sticknavbar)
     },[])
-
     return (
         <nav className= {navbar? "nav-container sticky": "nav-container"}  id='nav'>
             <div className="left-nav">
@@ -33,7 +30,6 @@ const Navbar =()=> {
 
                 </ul>
             </div>
-
         </nav>
     )
 }
