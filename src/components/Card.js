@@ -21,6 +21,7 @@
 
 // export default Card;
 import React from "react";
+import "./Card.css";
 
 export default function Card(props) {
   let newClassName = `color_bg ${props.alt}`;
