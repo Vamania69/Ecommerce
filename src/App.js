@@ -1,6 +1,6 @@
 import './App.css';
 import Index from './pages/home';
-import Buy from './pages/buy';
+// import Buy from './pages/buy';
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 // import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -11,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <Index/>
-      <Buy/>
     </div>
   );
 }

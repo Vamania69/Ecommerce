@@ -1,8 +1,9 @@
 import React from 'react'
 import Button from '../components/button'
+// import { CardData } from '../components/CardData'
 import Herocontainer from '../components/herocontainer'
-import LatestIteams from '../components/mainSection/latestIteam'
-import Category from '../components/mainSection/category'
+import LatestIteams from '../components/latestIteam'
+import Category from '../components/category'
 function index() {
   return (
     <div>
