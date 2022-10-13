@@ -1,8 +1,6 @@
 import React from 'react'
-// import img from '../mainSection/f7439c09be0cf66c0afeadb6c1e1a2dc.jpg'
 import Card from './Card'
 import {products} from '../utils/productData'
-// import { CardData } from '../CardData'
 function latestIteams() {
   return (
     <section className='latest-container' >

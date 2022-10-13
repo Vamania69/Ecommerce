@@ -12,10 +12,7 @@ function index() {
       <section className='category'>
       <h3>Categoy</h3>
       <Category/>
-      <Category/>
-      <Category/>
       </section>
-      <Button/>
       <Button/>
     </div>
   )

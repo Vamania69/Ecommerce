@@ -28,7 +28,7 @@ const Navbar =()=> {
             <div className="right-nav">
                 <ul className='nav-pages'>
                     <li><a href=""> Home </a></li>
-                    <li><a href="../pages/buy"> Categories </a></li>
+                    <li><a href=""> Categories </a></li>
                     <li><a href=""> Orders </a></li>
                     <li><a href=""> Checkout </a></li>
                     <li><a href=""><i className="fal fa-shopping-cart"><span className='cart-count'>0</span></i></a></li>
