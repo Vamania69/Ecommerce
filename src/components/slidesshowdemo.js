@@ -44,7 +44,7 @@ function Slidesshowdemo() {
              <a href=""><img src={collection[index]} alt="" />
              </a><div className="slide-btn">
                 <button onClick={changePrev} className='primary-btn slide-right'>&#10094;</button>
-                <button onClick={changeNext} className='primary-btn slide-left'>&#10094;</button>
+                <button onClick={changeNext} className='primary-btn slide-left'>&#62;</button>
                 </div>
             </div>
         </>

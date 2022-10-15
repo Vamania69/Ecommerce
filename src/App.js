@@ -1,5 +1,6 @@
 import './App.css';
 import Index from './pages/home';
+// import Button from 'react-bootstrap/Button';
 // import Buy from './pages/buy';
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Index/>
+    
     </div>
   );
 }
