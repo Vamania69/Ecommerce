@@ -28,7 +28,7 @@
   justify-content: space-around;
 }
 
-.card {
+.productcard {
   -webkit-transition: ease all 0.3s;
   transition: ease all 0.3s;
   width: 300px;

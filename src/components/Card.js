@@ -6,7 +6,7 @@ export default function Card(props) {
   let bg_img = `url(${props.images})`;
   let { title, old_price, newPrice, rupess, exp_date } = props;
   return (
-    <div className="card">
+    <div className="productcard">
       <div className="warpper">
         <div className={newClassName}></div>
         <div className="card_img" style={{ backgroundImage: bg_img }}></div>
