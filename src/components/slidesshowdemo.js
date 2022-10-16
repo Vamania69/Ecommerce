@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import '../App.css'
 import img1 from "../img/hero section/demo_img_1-1056x450.jpg"
@@ -14,37 +15,41 @@ function Slidesshowdemo() {
         setIndex(0)
     }, [])
 
-    const changeNext = () => {
-        if (index === collection.length - 1) {
-            setIndex(0)
-            console.log(index)
-        }
-        else {
-            setIndex(index + 1)
-            console.log(index)
-        }
+  const changeNext = () => {
+    if (index === collection.length - 1) {
+      setIndex(0);
+      console.log(index);
+    } else {
+      setIndex(index + 1);
+      console.log(index);
     }
-    const changePrev = () => {
-        if (index === 0) {
-            setIndex(collection.length - 1)
-            console.log(index)
-        }
-        else {
-            setIndex(index - 1)
-            console.log(index)
-        }
+  };
+  const changePrev = () => {
+    if (index === 0) {
+      setIndex(collection.length - 1);
+      console.log(index);
+    } else {
+      setIndex(index - 1);
+      console.log(index);
     }
-    return (
-        <>
-            <div className='slide-img'>
-             <a href=""><img src={collection[index]} alt="" />
-             </a><div className="slide-btn">
-                <button onClick={changePrev} className='primary-btn slide-right'>&#10094;</button>
-                <button onClick={changeNext} className='primary-btn slide-left'>&#62;</button>
-                </div>
-            </div>
-        </>
-    )
+  };
+  return (
+    <>
+      <div className="slide-img">
+        <a href="">
+          <img src={collection[index]} alt="" />
+        </a>
+        <div className="slide-btn">
+          <button onClick={changePrev} className="primary-btn slide-right">
+            &#10094;
+          </button>
+          <button onClick={changeNext} className="primary-btn slide-left">
+            &#10094;
+          </button>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Slidesshowdemo         
+export default Slidesshowdemo;

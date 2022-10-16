@@ -19,6 +19,6 @@ function index() {
       {<ShoppingCart/>
   }
     </div>
-  )
+  );
 }
-export default index
+export default index;

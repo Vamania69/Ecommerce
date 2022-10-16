@@ -59,7 +59,6 @@ a {
   z-index: 1000;
   background: white;
   color: var(--primary-color);
- 
 }
 
 .cart-count {
@@ -78,12 +77,12 @@ a {
 .right-nav {
   margin-right: 3rem;
 }
-.left-nav{
+.left-nav {
   display: flex;
   justify-content: space-between;
-  margin-left:auto ;
+  margin-left: auto;
 }
-.nav-pages{
+.nav-pages {
   display: flex;
   list-style: none;
   padding: 0 1rem;
