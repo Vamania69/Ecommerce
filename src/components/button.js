@@ -1,10 +1,7 @@
 import React from "react";
 import "../App.css";
 function Button() {
-  const change = () => {
-    <h1>hello</h1>;
-    console.log("hello");
-  };
+  const change = () => {};
   return (
     <div>
       <button

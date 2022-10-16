@@ -1,10 +1,8 @@
 import React from "react";
 import Button from "../components/button";
-// import { CardData } from '../components/CardData'
 import Herocontainer from "../components/herocontainer";
 import LatestIteams from "../components/latestIteam";
 import Category from "../components/category";
-//import { Registration } from "../components/Registration";
 function index() {
   return (
     <div>
@@ -15,7 +13,6 @@ function index() {
         <Category />
       </section>
       <Button />
-      {/* <Registration /> */}
     </div>
   );
 }
