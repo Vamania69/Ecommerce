@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react'
-// import Slidesshow from '../src/components/slidesshowdemo'
-
 import '../App.css'
 import img1 from "../img/hero section/demo_img_1-1056x450.jpg"
 import img2 from "../img/hero section/demo_img_2-1056x450.jpg"
 import img3 from "../img/hero section/demo_img_3-1056x450.jpg"
 import img4 from "../img/hero section/demo_img_4-1056x450.jpg"
-// import img5 from "../img/hero section/demo_img_5-1056x450.jpg"
 
 function Slidesshowdemo() {
     const collection = [
@@ -15,7 +12,6 @@ function Slidesshowdemo() {
     const [index, setIndex] = useState(0)
     useEffect(() => {
         setIndex(0)
-        // console.log(index)
     }, [])
 
     const changeNext = () => {

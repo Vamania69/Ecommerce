@@ -21,7 +21,8 @@ a{
     }
     
     .bg-grey {
-    background-color: #eae8e8;
+    background-color: var(--primary-color);
+    color: white;
     }
     
     @media (min-width: 992px) {

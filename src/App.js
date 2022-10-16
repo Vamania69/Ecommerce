@@ -1,5 +1,7 @@
 import './App.css';
 import Index from './pages/home';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 // import Button from 'react-bootstrap/Button';
 // import Buy from './pages/buy';
 // import { library } from '@fortawesome/fontawesome-svg-core'
@@ -12,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <Index/>
-    
     </div>
   );
 }

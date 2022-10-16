@@ -1,6 +1,5 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-//style="border-radius: 15px;"
 import Button from 'react-bootstrap/Button';
 import { products } from '../utils/productData';
 import "./shoppingCart.css"

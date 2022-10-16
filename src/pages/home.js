@@ -3,7 +3,7 @@ import Button from '../components/button'
 import Herocontainer from '../components/herocontainer'
 import LatestIteams from '../components/latestIteam'
 import Category from '../components/category'
-// import ShoppingCart from '../components/shoppingCart'
+import ShoppingCart from '../components/shoppingCart'
 import Navbar from '../components/navbar'
 function index() {
   return (
@@ -16,7 +16,7 @@ function index() {
       <Category/>
       </section>
       <Button/>
-      {
+      {<ShoppingCart/>
   }
     </div>
   )

@@ -1,6 +1,5 @@
 import React from 'react'
 import Slidesshow from './slidesshowdemo'
-// import Navbar from './navbar'
 import '../App.css'
 
 function Herocontainer() {
