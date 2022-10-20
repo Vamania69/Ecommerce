@@ -1,10 +1,15 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import { products } from '../utils/productData';
 import "./shoppingCart.css"
 import "../App.css"
-function shoppingCart() {
+
+// import { Count } from '../App'
+// import { useContext } from 'react'
+
+function ShoppingCart() {
+  // const count = useContext()
   return (
     <section className="h-100 h-custom">
   <div className="container py-5 h-100">
@@ -17,7 +22,7 @@ function shoppingCart() {
                 <div className="p-5">
                   <div className="d-flex justify-content-between align-items-center mb-5">
                     <h1 className="fw-bold mb-0 text-black">Shopping Cart</h1>
-                    <h6 className="mb-0 text-muted">3 items</h6>
+                    <h6 className="mb-0 text-muted">{} items</h6>
                   </div>
                   <hr className="my-4"/>
 
@@ -165,7 +170,7 @@ function shoppingCart() {
                     <h5 className="text-uppercase">Total price</h5>
                     <h5>€ 137.00</h5>
                   </div>
-
+                  <button type="button" class="btn btn-outline-primary">Primary</button>
                   <button type="button" className="btn btn-primary btn-lg">Register</button>
                 </div>
               </div>
@@ -179,4 +184,4 @@ function shoppingCart() {
   )
 }
 
-export default shoppingCart
+export default ShoppingCart

@@ -66,6 +66,9 @@
 .warpper .heart:hover {
   cursor: pointer;
 }
+.heart svg:hover{
+  color: red;
+}
 
 .color_bg {
   display: block;
@@ -198,6 +201,7 @@
 
 .cart:hover {
   cursor: pointer;
+  color: var(--primary-color);
 }
 
 .cart svg,
@@ -206,5 +210,5 @@
   stroke: currentColor;
   fill: transparent;
   -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
+  /* transition-delay: 0.2s; */
 }

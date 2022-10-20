@@ -13,7 +13,7 @@ function buy() {
      </div>
      <a href="" className="cart-btn">
      <div className="float-cart-btn">
-     <span><i class="far fa-shopping-cart">sdasd</i></span>
+     <span><i class="far fa-shopping-cart"></i></span>
      <i class="fas fa-cart-arrow-down"></i>
      </div>
      </a>

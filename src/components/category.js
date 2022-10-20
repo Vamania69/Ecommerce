@@ -7,10 +7,9 @@ function category({category}) {
     <div className="category-container">
     <div className="category-1">
     <div className="category-name">
-      <h2>{category} </h2>
     </div>
     {
-      products?.map((product)=>
+      products.slice(0,4).map((product)=>
       {
         return(
           <Card

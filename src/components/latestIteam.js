@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import {products} from '../utils/productData'
-function latestIteams() {
+function latestIteams(countHandler) {
   return (
     <section className='latest-container' >
     <h3>Latest Products</h3>
@@ -17,6 +17,8 @@ function latestIteams() {
           rupess={product.rupess}
           alt={product.alt}
           exp_date={product.exp_date}
+          img={product.img}
+          countHandler={countHandler}
         />
         )
       })
