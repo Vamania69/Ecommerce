@@ -9,59 +9,68 @@ import Wishlist from './pages/Wishlist'
 import User from './pages/User'
 import Order from './pages/Order'
 import Navbar from "./components/navbar";
-import Hello from "./pages/hello";
-import {CartState} from './utils/context'
-// import Context from "./utils/context";
-// import { Button } from "bootstrap";
-
-// export const Count = React.createContext()
- 
-//useReducer 
-// const initialCount =0
-// const reducer= (state, action)=>{
-//   switch (action) {
-//     case 'increment':
-//       return state+1
-//     default:
-//       return initialState
-//   }
-// }
-
+// import {CartState} from './utils/context'
+import { useReducer } from "react";
+import { products } from "./utils/productData";
+// import { CartReducer } from "./utils/cartReducer";
+export const CountContext = React.createContext()
 function App() {
-//   const [value, dispatch]= useReducer(reducer,initialState)
-//   const {productItem}= products
-//   const [cartCount , SetCartCount] = useState(2);
-//    const countHanler=()=>{
-//      SetCartCount(cartCount+1)
-//    }
-// const provider ={cartCount, SetCartCount, countHanler}
-// console.log(provider)
-//  const {state} = CartState()
-//  console.log(state)
+
+  const CartReducer = (state, action) => {
+    switch (action.type) {
+      case "ADD_TO_CART":
+        return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] }
+      case "REMOVE_FROM_CART":
+        return { ...state, cart: state.cart.filter(c => c.id !== action.payload.id) }
+      default:
+        console.log('add to cart')
+        return state;
+    }
+  }
+  const productData = products.map((product) => ({
+    title: product.title,
+    old_price: product.old_price
+    , newPrice: product.newPrice
+    , rupess: product.rupess
+    , alt: product.alt
+    , exp_date: product.exp_date
+    , img: product.img
+  }))
+  const [state, dispatch] = useReducer(CartReducer,
+    { productData: productData, cart: [] })
+
+
+
+
+  console.log(state)
   return (
-    <div className="App">
-    <Router>
-    <Navbar/>
-    <Hello/>
-     <Routes>
-      <Route path='/' exect element=
-      {
-        <Home />
-      }
-      />
-      <Route  path='/' exect element={<Home/>} />
-      <Route  path='/Shop' element={<Shop/>} />
-      <Route path="/Order" element={<Order/>}/>
-      <Route path='/checkout' element={
-          <Checkout />
-      }/>
-      <Route path="/Wishlist" element={<Wishlist/>}/>
-      <Route path="/User" element={<User/>}/>
-     </Routes>
-    </Router>
-    </div>
-    
+    <CountContext.Provider value={{ countState: state, countDispatch: dispatch }}>
+      <div className="App">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path='/' exect element=
+              {
+                <Home />
+              }
+            />
+            <Route path='/' exect element={<Home />} />
+            <Route path='/Shop' element={<Shop />} />
+            <Route path="/Order" element={<Order />} />
+            <Route path='/checkout' element=
+              {
+                <Checkout />
+              }
+            />
+            <Route path="/Wishlist" element={<Wishlist />} />
+            <Route path="/User" element={<User />} />
+          </Routes>
+        </Router>
+      </div>
+    </CountContext.Provider>
+
   );
 }
 
 export default App;
+

@@ -7,10 +7,11 @@ function latestIteams(countHandler) {
     <h3>Latest Products</h3>
      <div className="item-container">
      {
-      products?.map((product)=>
+      products?.map((product,i)=>
       {
         return(
-          <Card
+          <Card 
+          key={i}
           title={product.title}
           old_price={product.old_price}
           newPrice={product.newPrice}

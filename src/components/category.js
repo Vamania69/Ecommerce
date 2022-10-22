@@ -2,17 +2,18 @@ import React from 'react'
   import Card from './Card'
 import {products} from '../utils/productData'
 
-function category({category}) {
+function Category({category}) {
   return (
     <div className="category-container">
     <div className="category-1">
     <div className="category-name">
     </div>
     {
-      products.slice(0,4).map((product)=>
+      products.slice(0,4).map((product,i)=>
       {
         return(
           <Card
+          key={i}
           title={product.title}
           old_price={product.old_price}
           newPrice={product.newPrice}
@@ -28,4 +29,4 @@ function category({category}) {
   )
 }
 
-export default category
+export default Category

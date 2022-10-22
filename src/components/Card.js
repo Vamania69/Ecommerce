@@ -1,18 +1,27 @@
 // import React, { useState } from "react";
+import { useContext } from "react";
+import { CountContext } from "../App";
+import { products } from "../utils/productData";
 import "./Card.css";
 
-export default function Card(props, countHandler) {
+export default function Card(props) {
   let newClassName = `color_bg ${props.alt}`;
   // let bg_img = `url(${props.img})`;
-  let { title, old_price, newPrice, rupess, exp_date ,img  } = props;
+  let { title, old_price, newPrice, rupess, exp_date, img } = props;
+  console.log()
+
+  //reducer dispatch using cntext
+
+  const countContext = useContext(CountContext)
+  console.log(countContext.countState)
   return (
     <div className="card">
       <div className="warpper">
         <div className={newClassName} >
-        <img src={img} alt=""/>
+          <img src={img} alt="" />
         </div>
-        <div className="card_img" style={{ backgroundImage:img }} >
-        
+        <div className="card_img" style={{ backgroundImage: img }} >
+
         </div>
         <div className="heart">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
@@ -33,7 +42,10 @@ export default function Card(props, countHandler) {
                 {newPrice}
               </p>
             </div>
-            <div onClick={()=>countHandler()} className="cart">
+            <button className="btn btn-secondary cart" onClick={() => countContext.countDispatch({
+              type: "ADD_TO_CART",
+              payload: { props },
+            })} >
               <svg
                 className="outCart"
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +55,7 @@ export default function Card(props, countHandler) {
                 <circle cx="23" cy="54" r="4"></circle>
                 <circle cx="49" cy="54" r="4"></circle>
               </svg>
-            </div>
+            </button>
           </div>
         </div>
       </div>

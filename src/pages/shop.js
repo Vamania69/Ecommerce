@@ -1,10 +1,10 @@
 import React from 'react'
 // import Navbar from '../components/navbar'
-function shop() {
+function Shop() {
   return (
     <>
     </>
   )
 }
 
-export default shop
+export default Shop

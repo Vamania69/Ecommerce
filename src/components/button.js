@@ -8,7 +8,7 @@ function Button() {
     <div>
     <button type='click' onClick={change()} className='primary-btn btn small large'>Sign Up</button>
     <button className='secondary-btn btn small large'>Add to cart</button>
-    <i class="fas fa-arrow-right"></i>
+    <i className="fas fa-arrow-right"></i>
     </div>
   )
 }

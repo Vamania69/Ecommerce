@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from '../components/navbar'
-function buy() {
+function Buy() {
   return (
     <div>
     <Navbar/>
@@ -13,12 +13,12 @@ function buy() {
      </div>
      <a href="" className="cart-btn">
      <div className="float-cart-btn">
-     <span><i class="far fa-shopping-cart"></i></span>
-     <i class="fas fa-cart-arrow-down"></i>
+     <span><i className="far fa-shopping-cart"></i></span>
+     <i className="fas fa-cart-arrow-down"></i>
      </div>
      </a>
     </div>
   )
 }
 
-export default buy
+export default Buy
