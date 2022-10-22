@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CountContext } from "../App";
 import { products } from "../utils/productData";
 import "./Card.css";
-
+import Button from "./button";
 export default function Card(props) {
   let newClassName = `color_bg ${props.alt}`;
   // let bg_img = `url(${props.img})`;
@@ -42,7 +42,7 @@ export default function Card(props) {
                 {newPrice}
               </p>
             </div>
-            <button className="btn btn-secondary cart" onClick={() => countContext.countDispatch({
+            <button className="btn btn-secondary" onClick={() => countContext.countDispatch({
               type: "ADD_TO_CART",
               payload: { props },
             })} >
@@ -55,10 +55,10 @@ export default function Card(props) {
                 <circle cx="23" cy="54" r="4"></circle>
                 <circle cx="49" cy="54" r="4"></circle>
               </svg>
-            </button>
+            </button >
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

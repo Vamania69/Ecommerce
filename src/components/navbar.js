@@ -9,7 +9,7 @@ import { useContext } from 'react'
 import { CountContext } from '../App'
 // import { counter } from '@fortawesome/fontawesome-svg-core'
 
-const Navbar = ({ cartCount }) => {
+const Navbar = () => {
     const countContext = useContext(CountContext)
     console.log(countContext.countDispatch)
     // const usercount = useContext(Count)
