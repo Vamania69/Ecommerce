@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React from 'react'
+import React, { useContext } from 'react'
 import './App.css';
 // import { products } from "./utils/productData";
 import Home from './pages/home';
@@ -13,9 +13,9 @@ import Navbar from "./components/navbar";
 import { useReducer } from "react";
 import { products } from "./utils/productData";
 import { CartReducer } from "./utils/cartReducer";
-export const CountContext = React.createContext()
+import Context, { CountContext } from "./utils/context";
+// export const CountContext = React.createContext()
 function App() {
-
   // const CartReducer = (state, action) => {
   //   switch (action.type) {
   //     case "ADD_TO_CART":
@@ -37,34 +37,34 @@ function App() {
   //   , exp_date: product.exp_date
   //   , img: product.img
   // }))
-  const [state, dispatch] = useReducer(CartReducer,
-    { productData: products, cart: [] })
-  console.log(state)
+  // const [state, dispatch] = useReducer(CartReducer,
+  //   { productData: products, cart: [] })
+  // console.log(state)
+  const countContext = useContext(CountContext)
+  console.log(countContext)
   return (
-    <CountContext.Provider value={{ countState: state, countDispatch: dispatch }}>
-      <div className="App">
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path='/' exect element=
-              {
-                <Home />
-              }
-            />
-            <Route path='/' exect element={<Home />} />
-            <Route path='/Shop' element={<Shop />} />
-            <Route path="/Order" element={<Order />} />
-            <Route path='/checkout' element=
-              {
-                <Checkout />
-              }
-            />
-            <Route path="/Wishlist" element={<Wishlist />} />
-            <Route path="/User" element={<User />} />
-          </Routes>
-        </Router>
-      </div>
-    </CountContext.Provider>
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' exect element=
+            {
+              <Home />
+            }
+          />
+          <Route path='/' exect element={<Home />} />
+          <Route path='/Shop' element={<Shop />} />
+          <Route path="/Order" element={<Order />} />
+          <Route path='/checkout' element=
+            {
+              <Checkout />
+            }
+          />
+          <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/User" element={<User />} />
+        </Routes>
+      </Router>
+    </div>
 
   );
 }

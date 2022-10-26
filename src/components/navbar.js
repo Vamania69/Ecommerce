@@ -6,19 +6,18 @@ import { Link } from 'react-router-dom'
 // import { useContext } from 'react'
 // import { Count } from '../App'
 import { useContext } from 'react'
-import { CountContext } from '../App'
+import { CountContext } from '../utils/context'
+// import { CountContext } from '../App'
 // import { counter } from '@fortawesome/fontawesome-svg-core'
 
 const Navbar = () => {
     const countContext = useContext(CountContext)
-    console.log(countContext.countDispatch)
     // const usercount = useContext(Count)
     // console.log(usercount)
     const [navbar, setNavbar] = useState(false)
     const Sticknavbar = () => {
         if (window.scrollY >= 50) {
             setNavbar(true)
-            console.log(window.scrollY)
             // console.log(cartCount)
         } else {
             setNavbar(false)
@@ -28,7 +27,6 @@ const Navbar = () => {
         Sticknavbar()
         window.addEventListener('scroll', Sticknavbar)
     })
-    console.log(countContext.countState.cart.length)
     return (
         <nav className={navbar ? "nav-container sticky " : "nav-container"} id='nav'>
             <div className="left-nav">

@@ -1,14 +1,11 @@
 import React from 'react'
 import '../App.css'
-function Button() {
-  const change = () => {
-    <h1>hello</h1>
-    console.log('hello')
-  }
+function Button(props) {
+  // console.log(props)
+  // console.log(props.value)
   return (
     <div>
-      <button type='click' className='primary-btn btn small large'>Sign Up</button>
-      <i className="fas fa-arrow-right"></i>
+      <button onClick={props.onClick} className={props.className}>{props.value}</button>
     </div>
   )
 }

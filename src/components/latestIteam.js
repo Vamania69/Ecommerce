@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import { products } from '../utils/productData'
-function latestIteams(countHandler) {
+function latestIteams() {
   return (
     <section className='latest-container' >
       <h3>Latest Products</h3>
@@ -10,6 +10,7 @@ function latestIteams(countHandler) {
           products?.map((product, i) => {
             return (
               <Card
+                id={product.id}
                 key={i}
                 title={product.title}
                 old_price={product.old_price}

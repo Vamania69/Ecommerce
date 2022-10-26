@@ -6,7 +6,7 @@ import { products } from "./productData";
 
 export const CountContext = React.createContext()
 
-function Context() {
+const Context = ({ children }) => {
 
 
   const [state, dispatch] = useReducer(CartReducer,
@@ -14,8 +14,8 @@ function Context() {
   )
 
   return (
-
     <CountContext.Provider value={{ countState: state, countDispatch: dispatch }}>
+      {children}
     </CountContext.Provider>
   )
 }

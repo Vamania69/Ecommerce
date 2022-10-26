@@ -14,23 +14,25 @@ a {
 }
 
 .primary-btn {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--primary-color) !important;
+  color: white !important;
   border: none;
   padding: 0.5rem 1.5rem;
 }
 
 .primary-btn:hover {
-  background-color: #10293d;
+  background-color: #5f7e98;
   transition: cubic-bezier(0.075, 0.82, 0.165, 2);
 }
 
 .secondary-btn {
-  background-color: transparent;
-  color: black;
-  border: black 2px solid;
-  border-radius: 5px;
+  color: var(--primary-color);
+  border: var(--primary-color) 2px solid !important;
+  border-radius: 5px !important;
   padding: 0.5rem 2rem;
+  /* align-items: center !important; */
+  margin-top: 1.5rem !important;
+  margin-left: 1rem !important;
 }
 
 .secondary-btn:hover {
@@ -268,4 +270,11 @@ a {
   width: 100%;
   background-color: #3d86b69f;
   margin-top: 10px;
+}
+
+
+/* remove btn propperty */
+.remove-btn {
+  font-size: 10px !important;
+
 }

@@ -1,19 +1,18 @@
 // import React, { useState } from "react";
-import { useContext } from "react";
-import { CountContext } from "../App";
-import { products } from "../utils/productData";
+import { useContext, useState } from "react";
 import "./Card.css";
 import Button from "./button";
+import { CountContext } from "../utils/context";
 export default function Card(props) {
   let newClassName = `color_bg ${props.alt}`;
   // let bg_img = `url(${props.img})`;
-  let { title, old_price, newPrice, rupess, exp_date, img } = props;
-  console.log()
+  let { title, old_price, newPrice, rupess, exp_date, img, id } = props;
+  console.log(id)
 
   //reducer dispatch using cntext
 
   const countContext = useContext(CountContext)
-  console.log(countContext.countState)
+  const cart = countContext.countState.cart
   return (
     <div className="card">
       <div className="warpper">
@@ -42,23 +41,30 @@ export default function Card(props) {
                 {newPrice}
               </p>
             </div>
-            <button className="btn btn-secondary" onClick={() => countContext.countDispatch({
-              type: "ADD_TO_CART",
-              payload: { props },
-            })} >
-              <svg
-                className="outCart"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 64 64"
-              >
-                <path d="M2 6h10l10 40h32l8-24H16"></path>
-                <circle cx="23" cy="54" r="4"></circle>
-                <circle cx="49" cy="54" r="4"></circle>
-              </svg>
-            </button >
+            {
+              //for checking if the item is present in cart or not and render add-to-card-btn/remove-btn
+              cart.some(item => item.props.id === id) ?
+                (<Button
+                  value="Remove From Cart"
+                  className="btn secondary-btn remove-btn"
+                  onClick={() => countContext.countDispatch({
+                    type: "REMOVE_FROM_CART",
+                    payload: { props },
+                  })} >
+                </Button >)
+                : (<Button
+                  value={<i className='fas fa-shopping-cart'></i>}
+                  className="btn primary-btn" onClick={() => countContext.countDispatch({
+                    type: "ADD_TO_CART",
+                    payload: { props },
+                  })}
+                >
+                  <i className="fas fa-shopping-cart"></i>
+                </Button >)
+            }
           </div>
         </div>
       </div>
     </div >
-  );
+  )
 }
