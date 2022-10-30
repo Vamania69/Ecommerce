@@ -65,6 +65,12 @@
 
 .warpper .heart:hover {
   cursor: pointer;
+  color: red !important;
+
+}
+
+.wishlist:hover {
+  color: red !important;
 }
 
 .color_bg {
@@ -88,6 +94,7 @@
 .color_bg.kashima {
   background-color: #3f4a69;
 }
+
 
 .card_img {
   background-size: contain;
@@ -198,6 +205,7 @@
 
 .cart:hover {
   cursor: pointer;
+  color: var(--primary-color);
 }
 
 .cart svg,
@@ -206,5 +214,14 @@
   stroke: currentColor;
   fill: transparent;
   -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
+  /* transition-delay: 0.2s; */
 }
+
+
+/* .btn-cart {
+  padding: 0rem 2rem;
+  margin: 0 1rem;
+  color: black;
+  background-color: transparent;
+  border: var(--primary-color) solid 1px;
+} */

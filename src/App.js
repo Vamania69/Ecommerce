@@ -1,21 +1,49 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useContext } from 'react'
 import './App.css';
-import Index from './pages/home';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { products } from "./utils/productData";
+import Home from './pages/home';
+import Checkout from './pages/checkout'
+import Shop from './pages/shopping-cart'
+import Wishlist from './pages/Wishlist'
+import User from './pages/User'
+import Order from './pages/Order'
+import WishlistCart from "./components/wishlistCarrt";
+import Navbar from "./components/navbar";
+// import {CartState} from './utils/context'
+import { useReducer } from "react";
+import Context, { CountContext } from "./utils/context";
+// import WishlistContext1, { WishlistContext } from "./utils/wishlistContext";
 
-// import Button from 'react-bootstrap/Button';
-// import Buy from './pages/buy';
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-// import { fab } from '@fortawesome/free-brands-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
-// library.add(faCheckSquare, faCoffee)
 function App() {
+
+  const countContext = useContext(CountContext)
+  console.log(countContext)
   return (
-    <div className="App">
-      <Index/>
-    </div>
+    < div className="App" >
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' exect element=
+            {
+              <Home />
+            }
+          />
+          <Route path='/' exect element={<Home />} />
+          <Route path='/ShoppingCart' element={<Shop />} />
+          <Route path="/Order" element={<Order />} />
+          <Route path='/checkout' element=
+            {
+              <Checkout />
+            }
+          />
+          <Route path="/Wishlist" element={<WishlistCart />} />
+          <Route path="/User" element={<User />} />
+        </Routes>
+      </Router>
+    </div >
   );
 }
 
 export default App;
+

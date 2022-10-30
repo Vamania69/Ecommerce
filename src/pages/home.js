@@ -1,24 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartState, CountContext } from '../utils/context'
 import Button from '../components/button'
 import Herocontainer from '../components/herocontainer'
 import LatestIteams from '../components/latestIteam'
 import Category from '../components/category'
-import ShoppingCart from '../components/shoppingCart'
-import Navbar from '../components/navbar'
-function index() {
+import Context from '../utils/context'
+// import { WishlistContext } from '../utils/wishlistContext'
+const Home = () => {
+
   return (
     <div>
-      <Navbar/>
-      <Herocontainer/>
-      <LatestIteams/>
+      <Herocontainer />
+      <LatestIteams />
       <section className='category'>
-      <h3>Category</h3>
-      <Category/>
+        <h3>Category</h3>
+        <Category />
       </section>
-      <Button/>
-      {<ShoppingCart/>
-  }
+      <Button />
     </div>
   )
 }
-export default index
+export default Home

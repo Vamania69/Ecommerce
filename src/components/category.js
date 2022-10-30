@@ -1,32 +1,32 @@
 import React from 'react'
-  import Card from './Card'
-import {products} from '../utils/productData'
+import Card from './Card'
+import { products } from '../utils/productData'
 
-function category({category}) {
+function Category({ category }) {
   return (
     <div className="category-container">
-    <div className="category-1">
-    <div className="category-name">
-      <h2>{category} </h2>
+      <div className="category-1">
+        <div className="category-name">
+        </div>
+        {
+          products.slice(0, 4).map((product, i) => {
+            return (
+              <Card
+                id={product.id}
+                key={i}
+                title={product.title}
+                old_price={product.old_price}
+                newPrice={product.newPrice}
+                rupess={product.rupess}
+                alt={product.alt}
+                exp_date={product.exp_date}
+              />
+            )
+          })
+        }
+      </div>
     </div>
-    {
-      products?.map((product)=>
-      {
-        return(
-          <Card
-          title={product.title}
-          old_price={product.old_price}
-          newPrice={product.newPrice}
-          rupess={product.rupess}
-          alt={product.alt}
-          exp_date={product.exp_date}
-        />
-        )
-      })
-     }
-    </div>
-   </div>
   )
 }
 
-export default category
+export default Category

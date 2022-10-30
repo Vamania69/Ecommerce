@@ -1,8 +1,16 @@
 import React from 'react'
 import Slidesshow from './slidesshowdemo'
 import '../App.css'
+import { CartState } from '../utils/context'
+
+// import Context from "./utils/context";
+
 
 function Herocontainer() {
+  
+  //  const {state}= CartState();
+  //  console.log(state)
+  //  console.log(productData)
   return (
     <>
     {
@@ -12,6 +20,7 @@ function Herocontainer() {
       <Slidesshow/>
       </div>
       </div>
+    
       </header>
     }
     </>

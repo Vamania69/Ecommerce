@@ -1,19 +1,54 @@
-import React from "react";
+// import React, { useState } from "react";
+import { useContext, useState } from "react";
 import "./Card.css";
-
+import Button from "./button";
+import { CountContext } from "../utils/context";
+// import { WishlistContext } from "../utils/wishlistContext";
 export default function Card(props) {
   let newClassName = `color_bg ${props.alt}`;
-  let bg_img = `url(${props.images})`;
-  let { title, old_price, newPrice, rupess, exp_date } = props;
+  // let bg_img = `url(${props.img})`;
+  let { title, old_price, newPrice, rupess, exp_date, img, id } = props;
+  console.log(id)
+
+  //reducer dispatch using cntext
+
+  const countContext = useContext(CountContext)
+  const cart = countContext.countState.cart
+  // const wishlistContext = useContext(WishlistContext)
+  // const wishlist = wishlistContext.WishlistCount.cart
+  // // console.log(wishlist)
   return (
     <div className="card">
       <div className="warpper">
-        <div className={newClassName}></div>
-        <div className="card_img" style={{ backgroundImage: bg_img }}></div>
+        <div className={newClassName} >
+          <img src={img} alt="" />
+        </div>
+        <div className="card_img" style={{ backgroundImage: img }} >
+
+        </div>
         <div className="heart">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-            <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"></path>
-          </svg>
+          {
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+              <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"></path>
+            </svg>
+            // wishlist.some(w => w.props.id === id) ?
+
+            //   (
+            //     <i onClick={() => {
+            //       wishlistContext.WishlistDispatch({
+            //         type: "REMOVE_FROM_CART",
+            //         payload: { props }
+            //       })
+            //     }} className="far fa-heart heart-filled" />
+            //   ) :
+            //   (<i onClick={() => {
+            //     wishlistContext.WishlistDispatch({
+            //       type: "ADD_TO_CART",
+            //       payload: { props }
+            //     })
+            //   }} className="far fa-heart" />
+            //   )
+          }
         </div>
         <div className="cardInfo">
           <h1>{title}</h1>
@@ -29,20 +64,30 @@ export default function Card(props) {
                 {newPrice}
               </p>
             </div>
-            <div className="cart">
-              <svg
-                className="outCart"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 64 64"
-              >
-                <path d="M2 6h10l10 40h32l8-24H16"></path>
-                <circle cx="23" cy="54" r="4"></circle>
-                <circle cx="49" cy="54" r="4"></circle>
-              </svg>
-            </div>
+            {
+              //for checking if the item is present in cart or not and render add-to-card-btn/remove-btn
+              cart.some(item => item.props.id === id) ?
+                (<Button
+                  value="Remove From Cart"
+                  className="btn secondary-btn remove-btn"
+                  onClick={() => countContext.countDispatch({
+                    type: "REMOVE_FROM_CART",
+                    payload: { props },
+                  })} >
+                </Button >)
+                : (<Button
+                  value={<i className='fas fa-shopping-cart'></i>}
+                  className="btn primary-btn" onClick={() => countContext.countDispatch({
+                    type: "ADD_TO_CART",
+                    payload: { props },
+                  })}
+                >
+                  <i className="fas fa-shopping-cart"></i>
+                </Button >)
+            }
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div >
+  )
 }
