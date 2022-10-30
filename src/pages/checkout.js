@@ -1,11 +1,11 @@
 import React from 'react'
-import ShoppingCart from '../components/shoppingCart'
+// import ShoppingCart from '../components/shoppingCart'
+import CheckoutCo from '../components/checkout'
 
-
-function Checkout({cartCount}) {
+function Checkout({ cartCount }) {
   return (<>
-    <ShoppingCart/>
-    </>
+    <CheckoutCo />
+  </>
 
   )
 }

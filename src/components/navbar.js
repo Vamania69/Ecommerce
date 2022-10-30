@@ -7,11 +7,13 @@ import { Link } from 'react-router-dom'
 // import { Count } from '../App'
 import { useContext } from 'react'
 import { CountContext } from '../utils/context'
+// import { WishlistContext } from '../utils/wishlistContext'
 // import { CountContext } from '../App'
 // import { counter } from '@fortawesome/fontawesome-svg-core'
 
 const Navbar = () => {
     const countContext = useContext(CountContext)
+    // const wishlistContext = useContext(WishlistContext)
     // const usercount = useContext(Count)
     // console.log(usercount)
     const [navbar, setNavbar] = useState(false)
@@ -42,8 +44,8 @@ const Navbar = () => {
                     <li><Link to="/"> Home </Link></li>
                     <li><Link to="/Shop"> Shop </Link></li>
                     <li><Link to="/Order"> Orders </Link></li>
-                    <li><Link to=""> Checkout </Link></li>
-                    <li><Link to="/checkout"><i className="fas fa-shopping-cart"><span className='cart-count'>{countContext.countState.cart.length}</span></i></Link ></li>
+                    <li><Link to="/Checkout"> Checkout </Link></li>
+                    <li><Link to="/ShoppingCart"><i className="fas fa-shopping-cart"><span className='cart-count'>{countContext.countState.cart.length}</span></i></Link ></li>
                     <li><Link to="/Wishlist"><i className="far fa-heart wishlist"></i></Link></li>
                     <li><Link to="User"><i className="far fa-user"></i></Link></li>
                 </ul>

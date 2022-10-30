@@ -4,46 +4,23 @@ import './App.css';
 // import { products } from "./utils/productData";
 import Home from './pages/home';
 import Checkout from './pages/checkout'
-import Shop from './pages/shop'
+import Shop from './pages/shopping-cart'
 import Wishlist from './pages/Wishlist'
 import User from './pages/User'
 import Order from './pages/Order'
+import WishlistCart from "./components/wishlistCarrt";
 import Navbar from "./components/navbar";
 // import {CartState} from './utils/context'
 import { useReducer } from "react";
-import { products } from "./utils/productData";
-import { CartReducer } from "./utils/cartReducer";
 import Context, { CountContext } from "./utils/context";
-// export const CountContext = React.createContext()
-function App() {
-  // const CartReducer = (state, action) => {
-  //   switch (action.type) {
-  //     case "ADD_TO_CART":
-  //       return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] }
-  //     case "REMOVE_FROM_CART":
-  //       return { ...state, cart: state.cart.filter(c => c.id !== action.payload.id) }
-  //     default:
-  //       console.log('add to cart')
-  //       return state;
-  //   }
-  // }
+// import WishlistContext1, { WishlistContext } from "./utils/wishlistContext";
 
-  // const productData = products.map((product) => ({
-  //   title: product.title
-  //   , old_price: product.old_price
-  //   , newPrice: product.newPrice
-  //   , rupess: product.rupess
-  //   , alt: product.alt
-  //   , exp_date: product.exp_date
-  //   , img: product.img
-  // }))
-  // const [state, dispatch] = useReducer(CartReducer,
-  //   { productData: products, cart: [] })
-  // console.log(state)
+function App() {
+
   const countContext = useContext(CountContext)
   console.log(countContext)
   return (
-    <div className="App">
+    < div className="App" >
       <Router>
         <Navbar />
         <Routes>
@@ -53,19 +30,18 @@ function App() {
             }
           />
           <Route path='/' exect element={<Home />} />
-          <Route path='/Shop' element={<Shop />} />
+          <Route path='/ShoppingCart' element={<Shop />} />
           <Route path="/Order" element={<Order />} />
           <Route path='/checkout' element=
             {
               <Checkout />
             }
           />
-          <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/Wishlist" element={<WishlistCart />} />
           <Route path="/User" element={<User />} />
         </Routes>
       </Router>
-    </div>
-
+    </div >
   );
 }
 

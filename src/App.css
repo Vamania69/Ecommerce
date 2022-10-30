@@ -26,6 +26,7 @@ a {
 }
 
 .secondary-btn {
+  background-color: white !important;
   color: var(--primary-color);
   border: var(--primary-color) 2px solid !important;
   border-radius: 5px !important;
@@ -41,7 +42,7 @@ a {
   border: 2px solid var(--primary-color);
 }
 
-.background-img {
+.ter .background-img {
   background: url("./img/f7439c09be0cf66c0afeadb6c1e1a2dc.jpg") no-repeat center center/cover;
   height: 100vh;
   width: 100%;

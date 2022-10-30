@@ -5,17 +5,19 @@ import App from "./App";
 import ReportWebVitals from "./reportWebVitals";
 import { CountContext } from "./utils/context";
 import Context from "./utils/context";
-
 import { products } from "./utils/productData";
+import Wishlist from "./pages/Wishlist";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
 
   <React.StrictMode>
+
     <Context>
       <App />
     </Context>
+
   </React.StrictMode>
 
 );

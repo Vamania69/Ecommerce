@@ -65,10 +65,12 @@
 
 .warpper .heart:hover {
   cursor: pointer;
+  color: red !important;
+
 }
 
-.heart svg:hover {
-  color: red;
+.wishlist:hover {
+  color: red !important;
 }
 
 .color_bg {
@@ -92,6 +94,7 @@
 .color_bg.kashima {
   background-color: #3f4a69;
 }
+
 
 .card_img {
   background-size: contain;
