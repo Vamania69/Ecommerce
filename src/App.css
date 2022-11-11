@@ -244,3 +244,11 @@ a {
   background-color: #3d86b69f;
   margin-top: 10px;
 }
+
+/* footer  */
+.bg-dark {
+  background-color: #183852;
+}
+.container {
+  background-color: #183852;
+}
