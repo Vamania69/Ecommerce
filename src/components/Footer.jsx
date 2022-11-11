@@ -86,7 +86,7 @@ export default function App() {
             <MDBRow className="d-flex justify-content-center">
               <MDBCol size="auto">
                 <p className="pt-2">
-                  <strong>Sign up for our newsletter</strong>
+                  <strong>Sign up </strong>
                 </p>
               </MDBCol>
 
