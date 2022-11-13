@@ -22,5 +22,22 @@ export const products=[
           rupess:"$",
           alt:"kashima",
           exp_date:"25-10-2020"
+    },
+    {
+        title:"this is third",
+          old_price:"999",
+          newPrice:"500",
+          rupess:"$",
+          alt:"kashima",
+          exp_date:"25-10-2020"
+    }
+    ,
+    {
+        title:"this is third",
+          old_price:"999",
+          newPrice:"500",
+          rupess:"$",
+          alt:"kashima",
+          exp_date:"25-10-2020"
     }
 ]
