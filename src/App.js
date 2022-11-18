@@ -5,15 +5,15 @@ import './App.css';
 import Home from './pages/home';
 import Checkout from './pages/checkout'
 import Shop from './pages/shopping-cart'
+// import Wishlist from './pages/Wishlist'
 import Wishlist from './pages/Wishlist'
 import User from './pages/User'
 import Order from './pages/Order'
-import WishlistCart from "./components/wishlistCarrt";
 import Navbar from "./components/navbar";
 // import {CartState} from './utils/context'
 import { useReducer } from "react";
 import Context, { CountContext } from "./utils/context";
-// import WishlistContext1, { WishlistContext } from "./utils/wishlistContext";
+import WishlistContext1, { WishlistContext } from "./utils/wishlistContext";
 
 function App() {
 
@@ -21,26 +21,29 @@ function App() {
   console.log(countContext)
   return (
     < div className="App" >
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path='/' exect element=
-            {
-              <Home />
-            }
-          />
-          <Route path='/' exect element={<Home />} />
-          <Route path='/ShoppingCart' element={<Shop />} />
-          <Route path="/Order" element={<Order />} />
-          <Route path='/checkout' element=
-            {
-              <Checkout />
-            }
-          />
-          <Route path="/Wishlist" element={<WishlistCart />} />
-          <Route path="/User" element={<User />} />
-        </Routes>
-      </Router>
+      <WishlistContext1>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path='/' exect element=
+              {
+                <Home />
+              }
+            />
+            <Route path='/' exect element={<Home />} />
+            <Route path='/ShoppingCart' element={<Shop />} />
+            <Route path="/Order" element={<Order />} />
+            <Route path='/checkout' element=
+              {
+                <Checkout />
+              }
+            />
+            <Route path="/Wishlist" element={<Wishlist />} />
+            <Route path="/User" element={<User />} />
+          </Routes>
+        </Router>
+      </WishlistContext1>
+
     </div >
   );
 }

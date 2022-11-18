@@ -1,8 +1,11 @@
 import React from 'react'
+import WishlistCart from "../components/wishlistCarrt";
 
-const Wishlist = () => {
+function Wishlist() {
   return (
-    <></>
+    <>
+      <WishlistCart />
+    </>
   )
 }
 

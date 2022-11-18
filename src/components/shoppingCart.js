@@ -1,44 +1,48 @@
 import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Button from "react-bootstrap/Button";
-// import { products } from '../utils/productData';
 import "./shoppingCart.css";
 import "../App.css";
 import { CountContext } from "../utils/context";
 import { Link } from 'react-router-dom'
-import { getElementError } from "@testing-library/react";
 import Button from "./button";
 
 export default function ShoppingCart() {
+  //cart state
   const countState = useContext(CountContext);
+  //cart array
   const cartstate = countState.countState.cart;
   console.log(cartstate.length);
   let total = 0;
-  {
-    cartstate.forEach((element) => {
-      total = total + element.props.newPrice * element.qty;
-      console.log(total);
-    });
+  //total value of item in cart
+
+  cartstate?.forEach((element) => {
+    {
+      if (!!element.props) {
+
+        total = total + element.props?.newPrice * element.qty;
+        console.log(total);
+      }
+    }
     //  coupon check 
-  }
+  })
 
 
   return (
     <>
       {
-        cartstate.length === 0 ? (<div class="container-fluid  mt-100">
-          <div class="">
+        cartstate.length === 0 ? (<div className="container-fluid  mt-100">
+          <div className="">
 
-            <div class="col-md-12">
+            <div className="col-md-12">
 
-              <div class="emptyCard">
+              <div className="emptyCard">
 
-                <div class="emptyCard-body ">
-                  <div class="col-sm-12 empty-cart-cls text-center">
-                    <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3" />
+                <div className="emptyCard-body ">
+                  <div className="col-sm-12 empty-cart-cls text-center">
+                    <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" className="img-fluid mb-4 mr-3" />
                     <h3><strong>Your Cart is Empty</strong></h3>
                     <h4>Add something to make me happy :)</h4>
-                    <Link to="/" class="btn btn-primary cart-btn-transform m-3" data-abc="true">Continue Shopping</Link>
+                    <Link to="/" className="btn btn-primary cart-btn-transform m-3" data-abc="true">Continue Shopping</Link>
 
 
                   </div>
@@ -71,7 +75,7 @@ export default function ShoppingCart() {
                             <hr className="my-4" />
                             {
                               //mapping the cart items into shopping page
-                              cartstate.map((item) => {
+                              cartstate?.map((item) => {
                                 return (
                                   <div className="row mb-4 d-flex justify-content-between align-items-center">
                                     <div className="col-md-2 col-lg-2 col-xl-2">
@@ -84,7 +88,7 @@ export default function ShoppingCart() {
                                     <div className="col-md-3 col-lg-3 col-xl-3">
                                       <h6 className="text-muted">Shirt</h6>
                                       <h6 className="text-black mb-0">
-                                        {item.props.title}
+                                        {item.props?.title}
                                       </h6>
                                     </div>
                                     <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
@@ -111,7 +115,7 @@ export default function ShoppingCart() {
                                     </div>
                                     <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                                       <h6 className="mb-0">
-                                        Rs {item.props.newPrice}
+                                        Rs {item.props?.newPrice}
                                       </h6>
                                     </div>
                                     <div className="col-md-1 col-lg-1 col-xl-1 text-end">
@@ -169,7 +173,7 @@ export default function ShoppingCart() {
                                   id="form3Examplea2"
                                   className="form-control form-control-lg"
                                 />
-                                <label className="form-label" for="form3Examplea2">
+                                <label className="form-label" HTMLfor="form3Examplea2">
                                   Enter your code
                                 </label>
                               </div>
@@ -183,11 +187,12 @@ export default function ShoppingCart() {
                             </div>
                             <div className="checkout justify-content-center">
 
-                              <Button value="Checkout"
-                                className="btn secondary-btn checkout-btn"
-                              >
-
-                              </Button>
+                              <Link to="/Checkout">
+                                <Button value="Checkout"
+                                  className="btn secondary-btn checkout-btn"
+                                >
+                                </Button>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -204,9 +209,6 @@ export default function ShoppingCart() {
 
         )
       }
-
-
-
     </>
   )
 }

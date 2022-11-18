@@ -32,7 +32,6 @@ export const products = [
   },
   {
     id: 4,
-
     title: "this is third",
     old_price: "999",
     newPrice: "500",

@@ -7,7 +7,7 @@ import img4 from "../img/hero section/demo_img_4-1056x450.jpg"
 
 function Slidesshowdemo() {
     const collection = [
-        img1, img2, img3,img4
+        img1, img2, img3, img4
     ]
     const [index, setIndex] = useState(0)
     useEffect(() => {
@@ -37,10 +37,10 @@ function Slidesshowdemo() {
     return (
         <>
             <div className='slide-img'>
-             <a href=""><img src={collection[index]} alt="" />
-             </a><div className="slide-btn">
-                <button onClick={changePrev} className='primary-btn slide-right'>&#10094;</button>
-                <button onClick={changeNext} className='primary-btn slide-left'>&#62;</button>
+                <a href=""><img src={collection[index]} alt="" />
+                </a><div className="slide-btn">
+                    <button onClick={changePrev} className='primary-btn slide-right'>&#10094;</button>
+                    <button onClick={changeNext} className='primary-btn slide-left'> &#10095; </button>
                 </div>
             </div>
         </>
