@@ -1,3 +1,10 @@
+
+import "./App.css";
+import Index from "./pages/home";
+// import { Registration } from "../src/components/Registration";
+import Login from "../src/components/loginpage";
+import Footer from "../src/components/Footer";
+
 import './App.css';
 import Index from './pages/home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -10,10 +17,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 // library.add(faCheckSquare, faCoffee)
+
 function App() {
   return (
     <div className="App">
-      <Index/>
+      <Index />
+      {/* <Registration /> */}
+      <Login />
+      <Footer />
     </div>
   );
 }
