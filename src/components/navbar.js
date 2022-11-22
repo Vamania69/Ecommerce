@@ -39,7 +39,7 @@ const Navbar = () => {
                     <li><Link to="/Checkout"> Checkout </Link></li>
                     <li><Link to="/ShoppingCart"><i className="fas fa-shopping-cart"><span className='cart-count'>{countContext.countState.cart.length}</span></i></Link ></li>
                     <li><Link to="/Wishlist"><i className="far fa-heart wishlist"></i></Link></li>
-                    <li><Link title='signed in' to="User"><i className="far fa-user"></i></Link></li>
+                    <li><Link to="/User" title='signed in' ><i className="far fa-user"></i></Link></li>
                 </ul>
             </div>
         </nav>

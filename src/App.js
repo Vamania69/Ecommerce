@@ -10,10 +10,11 @@ import Wishlist from './pages/Wishlist'
 import User from './pages/User'
 import Order from './pages/Order'
 import Navbar from "./components/navbar";
+import Footer from "./components/Footer";
 // import {CartState} from './utils/context'
-import { useReducer } from "react";
-import Context, { CountContext } from "./utils/context";
-import WishlistContext1, { WishlistContext } from "./utils/wishlistContext";
+// import { useReducer } from "react";
+import { CountContext } from "./utils/context";
+import WishlistContext1 from "./utils/wishlistContext";
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/Wishlist" element={<Wishlist />} />
             <Route path="/User" element={<User />} />
           </Routes>
+          <Footer />
         </Router>
       </WishlistContext1>
 

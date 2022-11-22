@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { CountContext } from '../utils/context'
 import { WishlistContext } from '../utils/wishlistContext'
 import { Link } from 'react-router-dom'
@@ -46,7 +46,7 @@ export default function WishlistCart() {
                                         //checking id item is present in cart-if yes it will not be in wishlist
                                         return (
                                             <div className="row p-2 bg-white border mt-3 rounded ">
-                                                <div className="col-md-3 mt-1"><img className="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg" /></div>
+                                                <div className="col-md-3 mt-1"><img className="img-fluid img-responsive rounded product-image" alt="" src="https://i.imgur.com/QpjAiHq.jpg" /></div>
                                                 <div className="col-md-6 mt-1">
                                                     <h5>{WishItem.props.title}</h5>
                                                     <div className="d-flex flex-row">
@@ -88,13 +88,9 @@ export default function WishlistCart() {
                                                     </div>
                                                 </div>
                                             </div>
-
                                         )
                                     }))
-
                                 }
-
-
                             </div>
                         </div>
                     </div>

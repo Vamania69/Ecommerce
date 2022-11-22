@@ -8,23 +8,22 @@ export default function Card(props) {
   let newClassName = `color_bg ${props.alt}`;
   // let bg_img = `url(${props.img})`;
   let { title, old_price, newPrice, rupess, exp_date, img, id } = props;
-  console.log(id)
 
   //reducer dispatch using cntext
-
   const countContext = useContext(CountContext)
   const cart = countContext.countState.cart
   const wishlistContext = useContext(WishlistContext)
   const wishlist = wishlistContext.WishlistCount.cart
-  // // console.log(wishlist)
+
   return (
     <div className="card">
       <div className="warpper">
-        <div className={newClassName} >
-          <img src={img} alt="" />
+        {
+          //adding background image to the product card set height and width here 
+        }
+        <div className={newClassName} style={{ backgroundImage: `url(${img}) ` }} >
         </div>
-        <div className="card_img" style={{ backgroundImage: img }} >
-
+        <div className="card_img"  >
         </div>
         <div className="heart">
           {
@@ -78,7 +77,7 @@ export default function Card(props) {
                 : (<Button
                   value={<i className='fas fa-shopping-cart'></i>}
                   className="btn primary-btn"
-                 
+
                   onClick={() => countContext.countDispatch({
                     type: "ADD_TO_CART",
                     payload: { props },

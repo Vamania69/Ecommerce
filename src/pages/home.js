@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Button from '../components/button'
 import Herocontainer from '../components/herocontainer'
 import LatestIteams from '../components/latestIteam'
