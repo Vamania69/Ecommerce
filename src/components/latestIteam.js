@@ -1,37 +1,57 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import Card from './Card'
 // import { products } from '../utils/productData'
-import axios from 'axios'
+import axios from '../utils/axiosInstance'
 
 function LatestIteams() {
   //fetching data from api and passing to the card.js 
   //state passing in usereducer function 
-
   const [array, setArray] = useState([])
+
   useEffect(() => {
-    //async function for fetching data
+    // console.log(localStorage)
+    const strStorage = (JSON.stringify(localStorage))
+    const objStorage = JSON.parse(strStorage)
+    const Token = objStorage.Token
+    console.log(Token)
+    //
     async function fetchData() {
       const request = await axios
-        .get('https://dp-backend-e-comm.herokuapp.com/api/products')
+        .get('/products', {
+          headers: {
+            Authorization: Token,
+            'Accept': '*/*',
+            'Content-Type': 'application/json; charset=utf-8'
+          }
+        })
+
       setArray(request.data.data)
+      console.log(request)
+      // console.log(array)
       return request;
-    }; fetchData()
-  }, ['https://dp-backend-e-comm.herokuapp.com/api/products']
+    }
+    try {
+      fetchData()
+    } catch (e) {
+      console.log(e.code)
+    }
+  }  //async function for fetching data
+    , ['/products']
   )
 
   const [Category, setCategory] = useState([])
   useEffect(() => {
-    setCategory(array?.filter((e) => e.categoryId === "e3b70fe0-0ad9-4e90-ad80-9b545be7762d"))
+    setCategory(array?.filter((e) => e.categoryId === "129a0d17-5246-4df0-bc00-893023c60b37"))
   }, [array])
 
-
+  console.log(array)
   return (
     //desecturing data from api 
     <section className='latest-container' >
       <h3>Latest Products</h3>
       <div className="item-container">
         {
-          Category?.map((item, i) => {
+          array?.map((item, i) => {
             // console.log(item.img[0])
             return (
               <Card
@@ -43,6 +63,7 @@ function LatestIteams() {
                 rupess={item.rupess}
                 alt={item.alt}
                 categoryId={item.categoryId}
+                description={item.description}
                 img={item.productImages[1].productImageUrl}
               />
             )

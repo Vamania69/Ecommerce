@@ -7,29 +7,28 @@ import { WishlistContext } from "../utils/wishlistContext";
 export default function Card(props) {
   let newClassName = `color_bg ${props.alt}`;
   // let bg_img = `url(${props.img})`;
-  let { title, old_price, newPrice, rupess, exp_date, img, id } = props;
-
+  let { title, old_price, newPrice, rupess, exp_date, description, img, id } = props;
   //reducer dispatch using cntext
   const countContext = useContext(CountContext)
   const cart = countContext.countState.cart
   const wishlistContext = useContext(WishlistContext)
   const wishlist = wishlistContext.WishlistCount.cart
-
   return (
     <div className="card">
       <div className="warpper">
         {
           //adding background image to the product card set height and width here 
         }
-        <div className={newClassName} style={{ backgroundImage: `url(${img}) ` }} >
-        </div>
-        <div className="card_img"  >
+        <div className="product-card-img">
+          <img
+            src={img}
+            className="img-fluid rounded-3"
+            alt="Cotton T-shirt"
+          />
         </div>
         <div className="heart">
           {
-
             wishlist.some(w => w.props.id === id) ?
-
               (
                 <i onClick={() => {
                   wishlistContext.WishlistDispatch({
@@ -37,7 +36,6 @@ export default function Card(props) {
                     payload: { props }
                   })
                 }} className="far fa-heart heart-filled"
-
                 />
               ) :
               (<i onClick={() => {
@@ -50,8 +48,8 @@ export default function Card(props) {
           }
         </div>
         <div className="cardInfo">
-          <h1>{title}</h1>
-          <p className="date_">{exp_date}</p>
+          <h1>{title}...</h1>
+          <p className="date_">product description</p>
           <div className="action">
             <div className="priceGroup">
               <p className="price old_price">

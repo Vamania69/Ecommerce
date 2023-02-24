@@ -15,6 +15,8 @@ import Footer from "./components/Footer";
 // import { useReducer } from "react";
 import { CountContext } from "./utils/context";
 import WishlistContext1 from "./utils/wishlistContext";
+//toasters
+import { ToastContainer } from "react-toastify";
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
   console.log(countContext)
   return (
     < div className="App" >
+      <ToastContainer />
       <WishlistContext1>
         <Router>
           <Navbar />

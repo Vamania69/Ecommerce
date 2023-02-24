@@ -37,6 +37,7 @@
   transition: ease all 0.3s;
 }
 
+
 .warpper:hover {
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
@@ -44,6 +45,14 @@
 
 .warpper:hover .card_img {
   height: 350px;
+}
+
+
+.product-card-img {
+  width: 100%;
+  height: 220px;
+  max-height: 220px;
+  min-height: 220px;
 }
 
 .warpper .heart {

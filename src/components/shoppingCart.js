@@ -18,42 +18,30 @@ export default function ShoppingCart() {
   cartstate?.forEach((element) => {
     {
       if (!!element.props) {
-
         total = total + element.props?.newPrice * element.qty;
         console.log(total);
       }
     }
     //  coupon check 
   })
-
-
   return (
     <>
       {
         cartstate.length === 0 ? (<div className="container-fluid  mt-100">
           <div className="">
-
             <div className="col-md-12">
-
               <div className="emptyCard">
-
                 <div className="emptyCard-body ">
                   <div className="col-sm-12 empty-cart-cls text-center">
                     <img src="https://i.imgur.com/dCdflKN.png" alt="" width="130" height="130" className="img-fluid mb-4 mr-3" />
                     <h3><strong>Your Cart is Empty</strong></h3>
                     <h4>Add something to make me happy :)</h4>
                     <Link to="/" className="btn btn-primary cart-btn-transform m-3" data-abc="true">Continue Shopping</Link>
-
-
                   </div>
                 </div>
               </div>
-
-
             </div>
-
           </div>
-
         </div>) : (
           <section className="h-100 h-custom">
             <div className="container py-5 h-100">
@@ -76,17 +64,18 @@ export default function ShoppingCart() {
                             {
                               //mapping the cart items into shopping page
                               cartstate?.map((item) => {
+                                console.log(item.props.img)
                                 return (
                                   <div className="row mb-4 d-flex justify-content-between align-items-center">
                                     <div className="col-md-2 col-lg-2 col-xl-2">
                                       <img
-                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp"
+                                        src={item.props.img}
                                         className="img-fluid rounded-3"
                                         alt="Cotton T-shirt"
                                       />
                                     </div>
                                     <div className="col-md-3 col-lg-3 col-xl-3">
-                                      <h6 className="text-muted">Shirt</h6>
+                                      <h6 className="text-muted"></h6>
                                       <h6 className="text-black mb-0">
                                         {item.props?.title}
                                       </h6>

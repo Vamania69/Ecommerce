@@ -7,13 +7,23 @@ import { CountContext } from "./utils/context";
 import Context from "./utils/context";
 import { products } from "./utils/productData";
 import Wishlist from "./pages/Wishlist";
+import axios from "axios";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
+// axios.interceptors.request.use(
+//   config => {
+//     console.log(config)
+//     return config
+//   },
+//   error => {
+//     console.log(error)
+//     Promise.reject(error)
+//   }
+// )
 root.render(
 
   <React.StrictMode>
-
     <Context>
       <App />
     </Context>

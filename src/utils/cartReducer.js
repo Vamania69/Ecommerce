@@ -10,7 +10,7 @@ export const CartReducer = (state, action) => {
             console.log(action.payload)
             return { ...state, cart: state.cart.filter(c => c.props.id !== action.payload.props.id) }
         default:
-            console.log('add to cart'             )
+            console.log('add to cart')
             return state;
     }
 }
