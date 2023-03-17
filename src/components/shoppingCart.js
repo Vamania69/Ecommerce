@@ -13,7 +13,7 @@ export default function ShoppingCart() {
   const countState = useContext(CountContext);
   //cart array
   const cartstate = countState.countState.cart;
-  console.log(cartstate.length);
+  console.log(countState.countState);
   let total = 0;
   //total value of item in cart
 
@@ -35,6 +35,9 @@ export default function ShoppingCart() {
     console.log(!!localStorage.getItem("Token"));
     console.log(isLoggedIn);
   }, []);
+
+  //quantity handler
+
   return (
     <>
       {isLoggedIn ? (
@@ -72,7 +75,7 @@ export default function ShoppingCart() {
               </div>
             </div>
           ) : (
-            <section className="h-100 h-custom">
+            <section className="h-100 ">
               <div className="container py-5 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                   <div className="col-12">
@@ -109,21 +112,12 @@ export default function ShoppingCart() {
                                             {item.props?.title}
                                           </h6>
                                         </div>
+                                        {console.log(item.qty)}
                                         <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                          <button
-                                            className="btn btn-link px-2"
-                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                          >
+                                          <button className="btn btn-link px-2">
                                             <i className="fas fas-primary fa-minus "></i>
                                           </button>
-                                          <input
-                                            id="form1"
-                                            min="0"
-                                            name="quantity"
-                                            value="1"
-                                            type="number"
-                                            className="form-control form-control-sm"
-                                          />
+                                          {item.qty}
                                           <button
                                             className="btn btn-link px-2"
                                             onclick="this.parentNode.querySelector('input[type=number]').stepUp()"

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import '../App.css'
+
 import axios from "../utils/axiosInstance";
 import {
   MDBContainer,
@@ -128,40 +130,43 @@ function Loginpage() {
           <div className="container py-5 h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col col-md-9 col-lg-7 col-xl-5">
-                <div className="card">
-                  <div className="card-body p-4">
+                <div className=" w-400 max-width-400px">
+                  <div className="card-body p-4 border-2 border rounded-3  border-solid">
                     <div className="d-flex text-black">
                       <div className="flex-shrink-0"></div>
                       <div className="flex-grow-1 ms-3">
-                        <h5 className="mb-1">{email}</h5>
-                        <p className="mb-2 pb-1">User</p>
-                        <div className="d-flex justify-content-start rounded-3 p-2 mb-2">
-                          <div>
-                            <p className="small text-muted mb-1">Articles</p>
-                            <p className="mb-0">41</p>
+                        <div className="d-flex justify-content-around ">
+                          <span>
+                            <h5 className="mb-1 text-white">{email}</h5>
+                            <p className="mb-2 text-white pb-1">User</p>
+                          </span>
+                          <div className="justify-content-end text-white" >
+                            <i className="fa-solid fa-user fa-2xl  " ></i>
                           </div>
-                          <div className="px-3">
-                            <p className="small text-muted mb-1">Followers</p>
-                            <p className="mb-0">976</p>
-                          </div>
-                          <div>
-                            <p className="small text-muted mb-1">Rating</p>
-                            <p className="mb-0">8.5</p>
-                          </div>
+
+                        </div><div className="d-flex justify-content-end rounded-3 p-2 mb-2">
                         </div>
                         <div className="d-flex pt-1">
                           <Link to="/ShoppingCart">
                             <button
                               type="button"
-                              className="btn btn-outline-primary me-1 flex-grow-1"
+                              className=" primary-btn m-l-2 border border-solid border-white rounded-3 me-1 flex-grow-1"
                             >
                               View Cart
+                            </button>
+                          </Link>
+                          <Link to="/Wishlist">
+                            <button
+                              type="button"
+                              className=" primary-btn  border border-solid border-white rounded-3 flex-grow-1"
+                            >
+                              Wishlist
                             </button>
                           </Link>
                           <button
                             onClick={removeHandler}
                             type="button"
-                            className="btn btn-primary flex-grow-1"
+                            className=" secondary-btn m-w-100 flex-grow-1"
                           >
                             Logout
                           </button>
@@ -183,6 +188,7 @@ function Loginpage() {
           >
             <MDBTabsItem>
               <MDBTabsLink
+                className={loginRegister ? "btn-primary" : "secondary:btn"}
                 onClick={() => handleJustifyClick("tab1")}
                 active={justifyActive === "tab1"}
               >
@@ -191,6 +197,7 @@ function Loginpage() {
             </MDBTabsItem>
             <MDBTabsItem>
               <MDBTabsLink
+                className={loginRegister ? "secondary-btn" : "btn-primary"}
                 onClick={() => handleJustifyClick("tab2")}
                 active={justifyActive === "tab2"}
               >
@@ -255,19 +262,21 @@ function Loginpage() {
                 // setting input tag with all attributes
               }
               <form onSubmit={submitHandler}>
+                <label htmlFor="Email">Email</label>
                 <MDBInput
                   wrapperClass="mb-4"
-                  label="Email address"
+                  placeholder="Enter Email"
                   id="form1"
                   type="email"
                   autoComplete="off"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   required
-                />
+                />              <label htmlFor="Password">Password</label>
+
                 <MDBInput
                   wrapperClass="mb-4"
-                  label="Password"
+                  placeholder="Enter Your Password"
                   id="form2"
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
@@ -344,34 +353,26 @@ function Loginpage() {
                 // register input file
               }
 
-              <MDBInput
-                wrapperClass="mb-4"
-                label="Name"
-                id="form1"
-                type="text"
-              />
-              <MDBInput
-                wrapperClass="mb-4"
-                label="Username"
-                id="form1"
-                type="text"
-              />
+
+              <label htmlFor="Email">Email</label>
               <MDBInput
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
                 wrapperClass="mb-4"
-                label="Email"
-                placeholder="enter email"
+                // label="Email"
+                placeholder="Enter your Email"
                 id="form1"
                 type="email"
               />
+              <label htmlFor="Password">Password</label>
+
               <MDBInput
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
                 wrapperClass="mb-4"
-                label="Password"
+                placeholder="Create Your Password"
                 id="form1"
                 type="password"
               />

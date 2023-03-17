@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -20,14 +21,29 @@
 .card {
   -webkit-transition: ease all 0.3s;
   transition: ease all 0.3s;
-  min-width: 250px !important;
-  max-width: 250px;
-  max-height: 450px;
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 380px;
+  max-height: 400px;
   background: white;
   margin: 0 .5rem;
 }
 
+/* media query for the card component  */
+@media (max-width : 412px) {
+  .card {
+    min-width: 155px;
+    max-width: 160px;
+    min-height: 400px;
+    max-height: 400px;
+    margin: 0 .5px;
+  }
+
+}
+
+
 .warpper {
+  flex-wrap: wrap;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
@@ -43,26 +59,52 @@
   transform: translateY(-10px);
 }
 
-.warpper:hover .card_img {
-  height: 350px;
+
+.img {
+  max-height: 200px;
+  min-height: 200px;
+  min-width: 170px;
+  max-width: 190px;
 }
 
+@media (max-width : 412px) {
+  .img {
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 160px;
+    max-height: 160px;
+    /* margin: 0; */
+
+  }
+
+}
 
 .product-card-img {
-  width: 100%;
-  height: 220px;
+  /* width: 100%; */
+  min-width: 175px;
   max-height: 220px;
-  min-height: 220px;
+  min-height: 200px;
+}
+
+@media (max-width : 412px) {
+  .product-card-img {
+    min-width: 150px;
+    max-width: 160px;
+    max-height: 170px;
+    min-height: 170px;
+
+  }
+
 }
 
 .warpper .heart {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 1;
+  z-index: 3;
   width: 25px;
   height: 25px;
-  color: #fff;
+  color: red;
 }
 
 .warpper .heart svg,
@@ -140,6 +182,7 @@
 .cardInfo p {
   width: 100%;
   font-size: 14px;
+  margin: 0 !important;
   text-align: center;
 }
 
@@ -157,7 +200,7 @@
   padding: 1rem;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 .priceGroup {
@@ -244,4 +287,10 @@
 
 .remove-btn {
   margin-left: 0 !important;
+}
+
+.product-discreaption {
+  width: 100%;
+  color: var(--primary-color);
+
 }
